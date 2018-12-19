@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>V-chat</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<nav class="header-menu">
+		<div class="users-online">
+			<img src="./img/users-online.png" />
+			<p>3 online</p>
+		</div>
+		<div class="profile">
+			<img src="img/avatar.png" alt="avatar" />
+			<p>Kamil Velaro</p>
+			<i class="arrow-down"></i>
+		</div>
+	</nav>
+	<section class="content">
+		<div class="chat-area">
+			<div class="status-zone">
+				<div class="users-list-with-search">
+					<input type="text" name="user-search" placeholder="Search"/>
+					<div class="users-list">
+						<div class="user" data-href="user-90">
+							<div class="avatar">
+								<img src="img/avatar.png" alt="avatar" />
+							</div>
+							<div class="user-details">
+								<div class="username">Kamil Velaro</div>
+								<div class="user-status">
+									<i class="status-online"></i>
+									<span class="status-text">Online</span>	
+								</div>							
+							</div>							
+						</div>
+						<div class="user" data-href="user-91">
+							<div class="avatar">
+								<img src="img/avatar.png" alt="avatar" />
+							</div>
+							<div class="user-details">
+								<div class="username">Kamil Velaro</div>
+								<div class="user-status">
+									<i class="status-away"></i>
+									<span class="status-text">Away</span>	
+								</div>							
+							</div>							
+						</div>
+						<div class="user" data-href="user-92">
+							<div class="avatar">
+								<img src="img/avatar.png" alt="avatar" />
+							</div>
+							<div class="user-details">
+								<div class="username">Kamil Velaro</div>
+								<div class="user-status">
+									<i class="status-offline"></i>
+									<span class="status-text">Offline</span>	
+								</div>							
+							</div>							
+						</div>
+						<div class="user" data-href="user-93">
+							<div class="avatar">
+								<img src="img/avatar.png" alt="avatar" />
+							</div>
+							<div class="user-details">
+								<div class="username">Kamil Velaro</div>
+								<div class="user-status">
+									<i class="status-online"></i>
+									<span class="status-text">Online</span>	
+								</div>							
+							</div>							
+						</div>
+						<div class="user" data-href="user-94">
+							<div class="avatar">
+								<img src="img/avatar.png" alt="avatar" />
+							</div>
+							<div class="user-details">
+								<div class="username">Kamil Velaro</div>
+								<div class="user-status">
+									<i class="status-away"></i>
+									<span class="status-text">Away</span>	
+								</div>							
+							</div>							
+						</div>
+					</div>
+				</div>				
+			</div>
+			<div class="user-chat-zone">
+				<div class="message-area">
+					<div class="tab-titles">
+						<!--
+						<div class="tab-title" data-href="user-90">
+							<span>chat1</span>
+							<i class="close">x</i>
+						</div>	
+						-->
+					</div>
+					<div class="tab-content"></div>
+					<!--
+					<div class="tab-content">
+						
+						<div class="message">
+							<img src="./img/avatar.png" alt="Avatar" />
+							<p>Cras quam lectus, fermentum eget metus quis, eleifend fringilla urna. Suspendisse vel enim tincidunt, vulputate felis a, accumsan ante. Suspendisse ultrices felis sed ultrices tristique. Nam quis nisl neque. Pellentesque vestibulum nunc at ligula sodales feugiat. Praesent tincidunt vestibulum ipsum ac tincidunt. Aenean sollicitudin a velit a accumsan. Nam et velit lacinia dui varius convallis ac vel felis. Fusce luctus nec leo sed lobortis. Duis sed dui ut arcu fringilla malesuada id ut arcu. Donec sed egestas massa. Integer vestibulum magna at velit varius, id laoreet risus porttitor.</p>
+						</div>
+						<div class="message">
+							<p>Cras tempus enim ac augue efficitur volutpat. Ut a porttitor dui. Mauris cursus felis turpis, et viverra neque imperdiet fermentum. Aenean et lacus vel neque accumsan tincidunt. Suspendisse gravida ipsum in felis dapibus, at dictum nulla bibendum. Fusce quis bibendum nibh. Fusce faucibus nibh nec rutrum fermentum. Vivamus tempor tempor dui eu eleifend. Proin pretium consequat lectus id dapibus. Nunc nisl tellus, pellentesque non bibendum eget, interdum non felis.</p>
+							<img src="./img/avatar.png" alt="Avatar" />
+						</div>
+						
+					</div>
+				-->
+				</div>
+					
+			</div>
+			<div class="chat-tabs hidden"></div>
+		</div>
+		<div class="controls">
+			<img class="baloon" src="./img/baloon.png" alt="baloon" />
+			<textarea class="message-box" rows="1"></textarea>
+			<img class="send-button" src="./img/send-button.png" />
+		</div>	
+	</section>
+</body>
+<script type="text/javascript" src="./js/socket.io.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+
+</html>
