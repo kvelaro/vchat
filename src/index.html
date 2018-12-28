@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>V-chat</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>V-chat</title>	
 </head>
 <body>
 	<nav class="header-menu">
@@ -86,32 +85,27 @@
 				</div>				
 			</div>
 			<div class="user-chat-zone">
-				<div class="message-area">
-					<div class="tab-titles">
-						<!--
-						<div class="tab-title" data-href="user-90">
-							<span>chat1</span>
-							<i class="close">x</i>
-						</div>	
-						-->
-					</div>
-					<div class="tab-content"></div>
-					<!--
-					<div class="tab-content">
-						
-						<div class="message">
-							<img src="./img/avatar.png" alt="Avatar" />
-							<p>Cras quam lectus, fermentum eget metus quis, eleifend fringilla urna. Suspendisse vel enim tincidunt, vulputate felis a, accumsan ante. Suspendisse ultrices felis sed ultrices tristique. Nam quis nisl neque. Pellentesque vestibulum nunc at ligula sodales feugiat. Praesent tincidunt vestibulum ipsum ac tincidunt. Aenean sollicitudin a velit a accumsan. Nam et velit lacinia dui varius convallis ac vel felis. Fusce luctus nec leo sed lobortis. Duis sed dui ut arcu fringilla malesuada id ut arcu. Donec sed egestas massa. Integer vestibulum magna at velit varius, id laoreet risus porttitor.</p>
-						</div>
-						<div class="message">
-							<p>Cras tempus enim ac augue efficitur volutpat. Ut a porttitor dui. Mauris cursus felis turpis, et viverra neque imperdiet fermentum. Aenean et lacus vel neque accumsan tincidunt. Suspendisse gravida ipsum in felis dapibus, at dictum nulla bibendum. Fusce quis bibendum nibh. Fusce faucibus nibh nec rutrum fermentum. Vivamus tempor tempor dui eu eleifend. Proin pretium consequat lectus id dapibus. Nunc nisl tellus, pellentesque non bibendum eget, interdum non felis.</p>
-							<img src="./img/avatar.png" alt="Avatar" />
-						</div>
-						
-					</div>
-				-->
+				<div class="tab">
+					<button class="tablinks">London</button>
+					<button class="tablinks">Paris</button>
+					<button class="tablinks">Tokyo</button>
 				</div>
-					
+							
+				<!-- Tab content -->
+				<div id="London" class="tabcontent">
+					<h3>London</h3>
+					<p>London is the capital city of England.</p>
+				</div>
+			
+				<div id="Paris" class="tabcontent">
+				<h3>Paris</h3>
+				<p>Paris is the capital of France.</p> 
+				</div>
+			
+				<div id="Tokyo" class="tabcontent">
+				<h3>Tokyo</h3>
+				<p>Tokyo is the capital of Japan.</p>
+				</div>
 			</div>
 			<div class="chat-tabs hidden"></div>
 		</div>
@@ -122,5 +116,4 @@
 		</div>	
 	</section>
 </body>
-<script type="text/javascript" src="./js/socket.io.min.js"></script>
 </html>

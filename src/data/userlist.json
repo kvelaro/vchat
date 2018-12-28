@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "username": "Kamil Velaro",
+        "status": "online",
+        "avatar": "img/avatar.png"
+    },
+    {
+        "id": 2,
+        "username": "Kamil Velaro",
+        "status": "away",
+        "avatar": "img/avatar.png"
+    },
+    {
+        "id": 3,
+        "username": "Kamil Velaro",
+        "status": "offline",
+        "avatar": "img/avatar.png"
+    },
+    {
+        "id": 4,
+        "username": "Kamil Velaro",
+        "status": "away",
+        "avatar": "img/avatar.png"
+    }
+]
