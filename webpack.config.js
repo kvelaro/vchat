@@ -46,7 +46,7 @@ module.exports = {
     },    
     { 
       test: /\.(png|jpg|gif)$/,
-      loader: "file-loader?name=img/[hash].[ext]"
+      loader: "file-loader?name=img/[name].[ext]"
     },
     { 
       test: /\.min\.js$/,

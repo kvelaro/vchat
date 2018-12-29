@@ -9,14 +9,14 @@ class Main extends Controller {
     }
     mainPage() {
         let users = [];
+        let userView = new UserView();
         axios.get('/data/userlist.json')
             .then(function (response) {
-                Array.from(response.data).forEach(element => {
-                    //let userView = new UserView();
+                Array.from(response.data).forEach(element => {                    
                     let userModel = new UserModel(element);
-                        
-                    
-                })
+                    users.push(userModel);
+                });
+                userView.renderUserList(users);
                 
             })
             .catch(function (error) {

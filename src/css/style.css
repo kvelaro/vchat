@@ -97,6 +97,10 @@ body {
 	display: none;
 }
 
+.active {
+	display: block !important;
+}
+
 /* Login */
 .login {
 	display: flex;
@@ -245,6 +249,29 @@ body {
 	width: 100%;	
 }
 
+.chat-area .user-chat-zone .tab {
+	height: 100%;;
+}
+
+.chat-area .user-chat-zone .tab .message {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: #0c77b7;
+	margin: 5px;
+	border-radius: 10px;
+	font-size: 15px;
+	color: #eee;
+}
+
+.chat-area .user-chat-zone .tab .message img {
+	width: 40px;
+}
+
+.chat-area .user-chat-zone .tab .message img, p {
+	padding: 5px;
+}
+
 .controls {	
 	display: flex;
 	justify-content: center;
@@ -281,7 +308,6 @@ body {
 /* Style the tab */
 .tab {
 	overflow: hidden;
-	border: 1px solid #252526;
 	background-color: #175488;
   }
   
@@ -309,10 +335,10 @@ body {
   
   /* Style the tab content */
   .tabcontent {
-	display: none;
-	padding: 6px 12px;
-	border: 1px solid #ccc;
+	display: none;	
+	border: 1px solid #175488;;
 	border-top: none;
+	
   }
 
 @media screen and (max-width: 550px) {
