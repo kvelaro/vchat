@@ -1,6 +1,7 @@
 import View from "./View";
 import Tab from "./TabView"
 import TabView from "./TabView";
+let defaultAvatar = require("../../img/avatar-default.png");
 
 const DOMElements = {
     userList: '.users-list'
@@ -40,18 +41,37 @@ export default class UserView extends View {
         let domUserList = document.querySelector(DOMElements.userList); 
         domUserList.addEventListener('click', function(event) {
             let activeUser = null;
-            event.path.forEach(element => {
-                let classList = element.classList || [];
+            let element = event.target;
+            while (true) {
+                console.log(element);
+                let classList = element.classList || [];   
                 if(classList.length != 0 && classList.contains('user')) {
                     activeUser = element;                    
+                    break;
                 }
-            });
+                element = element.parentNode;
+            }
+            
             if(activeUser != null) {                
                 let filter = userModels.filter(userModel => userModel.id == activeUser.dataset.href);
                 if(filter.length != 0) {
                     let userModel = filter.pop();
                     let tabUser = new TabView();
                     tabUser.renderTabItem(userModel);
+
+                    const wsInst = new WsHelper();
+                    const ws = wsInst.get();
+
+                    
+
+                    let data = {
+                        type: 'service',
+                        message: '',
+                        data: {
+                            nsp: 
+                        }
+
+                    }
                 }                
             }            
         });

@@ -2,4 +2,4 @@
 import '../css/style';
 
 /* JS */
-import './controller/MainController'; 
+import './controller/LoginController';

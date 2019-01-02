@@ -39,6 +39,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "md5": "^2.2.1",
     "socket.io": "^2.2.0"
   }
 }

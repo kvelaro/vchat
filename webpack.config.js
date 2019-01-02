@@ -5,10 +5,13 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
-  entry: ['babel-polyfill', path.join(__dirname, 'src', 'js', 'index')],
+mode: 'development',
+  entry: {
+    login: ['babel-polyfill', path.join(__dirname, 'src', 'js', 'login')],
+    main: [path.join(__dirname, 'src', 'js', 'index')]
+  },  
   output: {
-    filename: 'js/bundle.js',
+    filename: 'js/[name]/bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -66,7 +69,13 @@ module.exports = {
   plugins: [    
       new htmlWebpackPlugin({
         filename: 'index.html',
-        template: './src/index.html'
+        template: './src/index.html',
+        chunks: ['main']
+      }),
+      new htmlWebpackPlugin({
+        filename: 'login.html',
+        template: './src/login.html',
+        chunks: ['login']
       }),
       new MiniCssExtractPlugin({
         filename: "css/bundle.css"

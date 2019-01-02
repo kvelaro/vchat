@@ -32,8 +32,7 @@ body {
 }
 
 .content {
-	width: inherit;
-	height: inherit;
+	width: inherit;	
 }
 
 .btn {
@@ -82,13 +81,12 @@ body {
 	background-color: #a00;
 }
 
-.close {
+.maximize, .minimize, .close {
     border: none;
     font-style: normal;
     font-family: serif;
     font-size: 15px;
     display: inline-block;
-    margin-top: -10px;
     cursor: pointer;
     padding: 5px;
 }
@@ -196,8 +194,7 @@ body {
 
 .chat-area {
 	display: flex;
-	width: inherit;
-	height: inherit;
+	width: inherit;	
 }
 
 .status-zone {
@@ -249,7 +246,7 @@ body {
 	width: 100%;	
 }
 
-.chat-area .user-chat-zone .tab .message {
+.chat-area .user-chat-zone .message {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -260,18 +257,18 @@ body {
 	color: #eee;
 }
 
-.chat-area .user-chat-zone .tab .message img {
+.chat-area .user-chat-zone .message img {
 	width: 40px;
 }
 
-.chat-area .user-chat-zone .tab .message img, p {
+.chat-area .user-chat-zone .message img, p {
 	padding: 5px;
 }
 
 .controls {	
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 }
 
 .controls .baloon {
@@ -299,17 +296,14 @@ body {
 	cursor: pointer;
 }
 
-/*
-* Tab styles
-*/
-/* Style the tab */
+/* Tab styles */
 .tab {
 	overflow: hidden;
 	background-color: #175488;
   }
   
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
+/* Style the buttons that are used to open the tab content */
+.tab button {
 	background-color: inherit;
 	float: left;
 	border: none;
@@ -318,28 +312,56 @@ body {
 	padding: 14px 16px;
 	transition: 0.3s;
 	color: #fff
-  }
+}
   
-  /* Change background color of buttons on hover */
-  .tab button:hover {
+/* Change background color of buttons on hover */
+.tab button:hover {
 	background-color: #252526;
-  }
+}
   
-  /* Create an active/current tablink class */
-  .tab button.active {
+/* Create an active/current tablink class */
+.tab button.active {
 	background-color: #1e1e1e;
-  }
+}
   
-  /* Style the tab content */
-  .tabcontent {
+/* Style the tab content */
+.tabcontent {
 	display: none;	
 	border: 1px solid #175488;;
 	border-top: none;
-	
-  }
+}
+
+.log {	
+	background: #cacaca;
+	width: 300px;	
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-radius: 5px 5px 0 0;
+}
+.log p {
+	margin: 0;
+	padding: 0;
+}
+  
+.log .log-title {
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	color: #fff;
+}
+
+.log .log-body {
+	height: 300px;
+	margin: 5px;
+	font-size: 15px;
+	color: #fff;	
+	font-style: italic;
+}
 
 @media screen and (max-width: 550px) {
 	.login form input:not([type='button']) {
 		width: 300px;
 	}	
 }
+
