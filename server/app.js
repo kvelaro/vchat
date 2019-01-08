@@ -1,21 +1,4 @@
-var url = require('url');
-const server = require('http').createServer(function(req, res) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");    
-    let urlParts = url.parse(req.url, true);
-    let query = urlParts.query;
-    switch(urlParts.pathname) {
-        case '/users':
-            let usersToOut = users.filter(function(user) {return user.id != query.id;});
-            console.log(usersToOut);
-            res.write(JSON.stringify(usersToOut));
-        break;
-        default:
-        break;
-    }    
-    res.end();
-});
-const io = require('socket.io')(server);
+let url = require('url');
 const md5 = require('md5');
 const users = [
     {
@@ -25,6 +8,52 @@ const users = [
         status: 'online'
     }
 ];
+const server = require('http').createServer(function(req, res) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");    
+    let urlParts = url.parse(req.url, true);
+    let query = urlParts.query;
+    switch(urlParts.pathname) {    
+        case '/auth':
+            let body = '';
+            req.on('data', chunk => {
+                body += chunk.toString();
+            });
+            req.on('end', () => {
+                if(body.length != 0) {
+                    body = JSON.parse(body);
+                    let user = {
+                        id: md5(body.username + new Date()),
+                        username: body.username,
+                        status: 'online',
+                        avatar: '/img/avatar.png'
+                    }
+                    users.push(user);
+                    let response = {
+                        type: 'auth',
+                        message: 'success',
+                        error: false,
+                        data: user
+                    };
+                    //for now just accept
+                    res.write(
+                        JSON.stringify(response)
+                    );
+                }
+                res.end();
+            });            
+        break;
+        case '/users':
+            let usersToOut = users.filter(function(user) {return user.id != query.id;});
+            res.write(JSON.stringify(usersToOut));
+            res.end();
+        break;
+        default:
+        res.end();
+        break;
+    }
+});
+const io = require('socket.io')(server);
 io.on('connection', client => {
     client.send(
         JSON.stringify({
@@ -33,7 +62,7 @@ io.on('connection', client => {
         })
     );
     client.on("message", message => {
-        console.log(message);
+        //console.log(message);
         message= JSON.parse(message);
         switch(message.type) {
             case 'auth':

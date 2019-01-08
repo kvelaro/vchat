@@ -1,9 +1,10 @@
 import View from "./View";
-import Tab from "./TabView"
 import TabView from "./TabView";
+//export to dist folder
 let defaultAvatar = require("../../img/avatar-default.png");
 
 const DOMElements = {
+    profile: '.profile',
     userList: '.users-list'
 }
 
@@ -32,6 +33,17 @@ export default class UserView extends View {
 
         let domUserList = document.querySelector(DOMElements.userList);
         domUserList.insertAdjacentHTML('beforeend', userHtml); 
+    }
+
+    renderProfile() {
+        let auth = JSON.parse(window.localStorage.getItem('auth'));
+        const profileHTML = `
+            <img src="${auth.avatar}" alt="avatar" />
+			<p>${auth.username}</p>
+            <i class="arrow-down"></i>
+        `;
+        const domProfile = document.querySelector('.profile');
+        domProfile.insertAdjacentHTML('beforeend', profileHTML);
     }
 
     renderUserList(userModels) {
@@ -68,7 +80,7 @@ export default class UserView extends View {
                         type: 'service',
                         message: '',
                         data: {
-                            nsp: 
+                            
                         }
 
                     }

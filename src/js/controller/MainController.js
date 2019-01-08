@@ -9,6 +9,15 @@ const axios = require('axios');
 class MainController extends Controller {
     constructor() {
         super();
+        let auth = window.localStorage.getItem('auth');
+        if(auth != null) {
+            let user = {
+                username: auth.username,
+                status: auth.status,
+                avatar: auth.avatar
+            }
+            
+        }        
     }
 
     checkUser() {
@@ -38,9 +47,11 @@ class MainController extends Controller {
         // this.socket.on('disconnect', function(){});
 
     }
+    
     initUsers() {
         let users = [];
         let userView = new UserView();
+        userView.renderProfile();
 
         let auth = JSON.parse(window.localStorage.getItem('auth'));
         axios.get(`http://localhost:3000/users?id=${auth.id}&aaa=bbb`)
@@ -56,6 +67,7 @@ class MainController extends Controller {
                 console.log(error);
             });
     }
+
     initControls() {
         const controlsView = new ControlsView();
         controlsView.render();
